@@ -12,9 +12,6 @@
 - [About](#about)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Scripts and Tools](#scripts-and-tools)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
