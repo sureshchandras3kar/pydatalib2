@@ -1,6 +1,6 @@
 <!-- Project Title -->
 # PygniteCore
-![PygniteCore Logo](link_to_your_logo.png)
+![PygniteCore Logo](https://github.com/sureshchandras3kar/PygniteCore/blob/ignite/0.1/corelogo.png)
 
 <!-- Badges (Optional) -->
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
