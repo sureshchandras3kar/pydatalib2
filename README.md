@@ -35,14 +35,19 @@ pySwissTool is a foundational toolkit of dynamic Python utilities innovation and
 
 ---
 
-### Usage
+## Usage
+
 Start using pySwissTool in your Python projects:
 
+### String Manipulation
+
+```python
 from pySwissTool.string_utils import string_validation
 
 # Example usage:
 # String manipulation
 result = string_validation.is_string("input_string") # true
+```
 
 ---
 
@@ -50,5 +55,4 @@ result = string_validation.is_string("input_string") # true
 You can install pySwissTool using `pip`:
 ```bash
 pip install pySwissTool
-
-
+```
