@@ -1,5 +1,6 @@
 from typing import Any
 
+
 class PatternTypeNotFoundError(Exception):
     """
     Exception raised when a pattern type is not found.
