@@ -2,6 +2,9 @@ from .regex_strings import RePatterns
 from .regex_strings import PatternType
 
 
+re_patterns = RePatterns()
+
+
 def count_vowels(input_string: str) -> int:
     """
     Count the number of vowels in a string.
@@ -72,7 +75,6 @@ def is_valid_ipv4_address(obj: str) -> bool:
     """
     if not is_valid_string(obj):
         return False
-    re_patterns = RePatterns()
 
     pattern = re_patterns.get_pattern(PatternType.IPV4)
     if pattern.fullmatch(obj) is None:
@@ -90,8 +92,6 @@ def is_valid_ipv6_address(obj: str) -> bool:
 
     if not is_valid_string(obj):
         return False
-
-    re_patterns = RePatterns()
 
     pattern = re_patterns.get_pattern(PatternType.IPV6)
     if pattern.fullmatch(obj) is None:
@@ -118,9 +118,45 @@ def is_valid_url(obj: str) -> bool:
     :return:  boolean value true or false
     """
 
-    re_patterns = RePatterns()
     pattern = re_patterns.get_pattern(PatternType.URL)
     if pattern.fullmatch(obj) is None:
         return False
 
     return True
+
+
+def is_email_address(obj: str) -> bool:
+    """
+    Check if object is a valid email address
+    :param obj: object to check against the email address
+
+    :return:  boolean value true or false
+    """
+    email_pattern = re_patterns.get_pattern(PatternType.EMAIL)
+
+    if not is_valid_string(obj) or len(obj) > 320 or obj.startswith('.'):
+        return False
+
+    try:
+        # we expect 2 tokens, one before "@" and one after, otherwise we have an exception and the email is not valid
+        head, tail = obj.split('@')
+
+        # head's size must be <= 64, tail <= 255, head must not start with a dot or contain multiple consecutive dots
+        if len(head) > 64 or len(tail) > 255 or head.endswith('.') or ('..' in head):
+            return False
+
+        # removes escaped spaces, so that later on the test regex will accept the string
+        head = head.replace('\\ ', '')
+        if head.startswith('"') and head.endswith('"'):
+            head = head.replace(' ', '')[1:-1]
+
+        return email_pattern.match(head + '@' + tail) is not None
+
+    except ValueError:
+        escape_pattern = re_patterns.get_pattern(PatternType.ESCAPE_CHARACTER)
+        # borderline case in which we have multiple "@" signs but the head part is correctly escaped
+        if escape_pattern.search(obj) is not None:
+            # replace "@" with "a" in the head
+            return is_email_address(escape_pattern.sub('a', obj))
+
+        return False
