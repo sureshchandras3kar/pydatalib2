@@ -16,23 +16,20 @@ class PatternType(Enum):
 
 
 class RePatterns:
-    IPV4_PATTERN: Pattern[
-        str] = r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
-    IPV6_PATTERN: Pattern[
-        str] = r'^[a-fA-F0-9]{1,4}(:[a-fA-F0-9]{1,4}){7}$'  # Regular expression to match an IPv6 address
-    EMAIL_PATTERN: Pattern[
-        str] = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'  # Regular expression to match an email address
-    PHONE_NUMBER_PATTERN: Pattern[str] = r'^\+?[1-9]\d{1,14}$'
-    URL_PATTERN: Pattern[str] = r'^(https?|ftp)://[^\s/$.?#][a-zA-Z0-9_-]*(\.[a-zA-Z0-9_-]+)+(/[^\s]*)?$'
-    ESCAPE_SEARCH_PATTERN: Pattern[str] = r'(?!"[^"]*)@+(?=[^"]*")|\\@'
+    IPV4: Pattern[str] = r'^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+    IPV6: Pattern[str] = r'^[a-fA-F0-9]{1,4}(:[a-fA-F0-9]{1,4}){7}$'
+    EMAIL: Pattern[str] = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    PHONE_NUMBER: Pattern[str] = r'^\+?[1-9]\d{1,14}$'
+    URL: Pattern[str] = r'^(https?|ftp)://[^\s/$.?#][a-zA-Z0-9_-]*(\.[a-zA-Z0-9_-]+)+(/[^\s]*)?$'
+    ESCAPE_SEARCH: Pattern[str] = r'(?!"[^"]*)@+(?=[^"]*")|\\@'
 
     def __init__(self):
         self.PATTERN_MAPPING: Dict[PatternType, Pattern] = {
-            PatternType.EMAIL: compile(self.EMAIL_PATTERN),
-            PatternType.ESCAPE_CHARACTER: compile(self.ESCAPE_SEARCH_PATTERN),
-            PatternType.IPV4: compile(self.IPV4_PATTERN),
-            PatternType.PHONE_NUMBER: compile(self.PHONE_NUMBER_PATTERN),
-            PatternType.URL: compile(self.URL_PATTERN)
+            PatternType.EMAIL: compile(self.EMAIL),
+            PatternType.ESCAPE_CHARACTER: compile(self.ESCAPE_SEARCH),
+            PatternType.IPV4: compile(self.IPV4),
+            PatternType.PHONE_NUMBER: compile(self.PHONE_NUMBER),
+            PatternType.URL: compile(self.URL)
         }
 
     @property
