@@ -1,12 +1,12 @@
 
 <!-- Project Title -->
-# pySwissTool
-![pySwissTool Logo](https://github.com/sureshchandras3kar/pySwissTool/blob/ignite/0.1/assest/images/corelogo.png)
+# PyDataLib 
+![PyDataLib Logo](https://github.com/sureshchandras3kar/PyDataLib/blob/ignite/0.1/assest/images/corelogo.png)
 
 ---
 
 ## About
-pySwissTool is a foundational toolkit of dynamic Python utilities igniting innovation and efficiency in development.
+PyDataLib  is a foundational toolkit of dynamic Python utilities igniting innovation and efficiency in development.
 
 <!-- Badges (Optional) -->
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
@@ -22,7 +22,7 @@ pySwissTool is a foundational toolkit of dynamic Python utilities igniting innov
 ---
 
 ## About
-pySwissTool is a foundational toolkit of dynamic Python utilities innovation and efficiency in development.
+PyDataLib is a foundational toolkit of dynamic Python utilities innovation and efficiency in development.
 
 ### Key Features
 - **Flexibility**: A flexible set of utilities adaptable to various development needs.
@@ -37,12 +37,12 @@ pySwissTool is a foundational toolkit of dynamic Python utilities innovation and
 
 ## Usage
 
-Start using pySwissTool in your Python projects:
+Start using PyDataLib  in your Python projects:
 
 ### String Manipulation
 
 ```python
-from pySwissTool.string_utils import string_validation
+from PyDataLib.string_utils import string_validation
 
 # Example usage:
 # String manipulation
@@ -52,7 +52,7 @@ result = string_validation.is_string("input_string") # true
 ---
 
 ### Installation
-You can install pySwissTool using `pip`:
+You can install PyDataLib  using `pip`:
 ```bash
-pip install pySwissTool
+pip install PyDataLib 
 ```
