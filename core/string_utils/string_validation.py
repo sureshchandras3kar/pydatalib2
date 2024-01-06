@@ -2,8 +2,8 @@ from typing import List
 from typing import Union
 from typing import Iterable
 
-from regex_strings import PatternType
-from regex_strings import RePatterns
+from .regex_strings import PatternType
+from .regex_strings import RePatterns
 
 re_patterns = RePatterns()
 
