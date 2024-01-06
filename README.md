@@ -1,8 +1,13 @@
 
 <!-- Project Title -->
 # PyDataLib 
-![PyDataLib Logo](https://github.com/sureshchandras3kar/PyDataLib/blob/ignite/0.1/assest/images/corelogo.png)
 
+██████╗░██╗░░░██╗██████╗░░█████╗░████████╗░█████╗░██╗░░░░░██╗██████╗░
+██╔══██╗╚██╗░██╔╝██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██║░░░░░██║██╔══██╗
+██████╔╝░╚████╔╝░██║░░██║███████║░░░██║░░░███████║██║░░░░░██║██████╦╝
+██╔═══╝░░░╚██╔╝░░██║░░██║██╔══██║░░░██║░░░██╔══██║██║░░░░░██║██╔══██╗
+██║░░░░░░░░██║░░░██████╔╝██║░░██║░░░██║░░░██║░░██║███████╗██║██████╦╝
+╚═╝░░░░░░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═╝╚═════╝░
 ---
 
 ## About
@@ -42,7 +47,7 @@ Start using PyDataLib  in your Python projects:
 ### String Manipulation
 
 ```python
-from PyDataLib.string_utils import string_validation
+from pydatalib.string_utils import string_validation
 
 # Example usage:
 # String manipulation

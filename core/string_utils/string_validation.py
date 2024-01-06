@@ -1,8 +1,62 @@
-from .regex_strings import RePatterns
-from .regex_strings import PatternType
+from typing import List
+from typing import Union
+from typing import Iterable
 
+from .regex_strings import PatternType
+from .regex_strings import RePatterns
 
 re_patterns = RePatterns()
+
+
+def concat(strings: Iterable[str]) -> str:
+    """
+    Concatenate a list of strings into a single string.
+
+    :param strings: A list of strings to be concatenated.
+    :return: A single string composed of the concatenated input strings.
+    """
+    if not isinstance(strings, Iterable):
+        raise TypeError("Input must be an iterable.")
+    strings = map(str, strings)
+    return ''.join(strings)
+
+
+def contains(string: str, matches: Union[str, List[str]]) -> bool:
+    """
+    Check if a string contains any of the given values. `matches` may be a single string or a list of strings.
+
+    :param string: The string to check for matches.
+    :param matches: A single string or a list of strings to check within the input string.
+    :return: True if any of the matches are found in the string, False otherwise.
+    """
+    matches = [matches] if isinstance(matches, str) else matches
+    string = string.lower()
+    matches = list(filter(None, matches))
+    return any(m in string for m in matches)
+
+
+def contain_all(string: str, matches: Iterable[str]) -> bool:
+    """
+    Determine if a string contains all the given values.
+
+    :param string: The string to check for matches.
+    :param matches: An iterable of strings to check within the input string.
+    :return: True if all the matches are found in the string, False otherwise.
+
+    Example:
+    >>> contain_all("hello world",["hello", "world"])
+    True
+
+    >>> contain_all("hello world",["hello", "goodbye"])
+    False
+    """
+    if not isinstance(string, str):
+        raise TypeError("string parameter must be of type str")
+    if not isinstance(matches, Iterable):
+        raise TypeError("matches parameter must be iterable")
+    if not matches:
+        return True
+    return all(match in string for match in matches)
 
 
 def count_vowels(input_string: str) -> int:
