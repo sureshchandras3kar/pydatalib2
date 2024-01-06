@@ -2,8 +2,8 @@ from typing import List
 from typing import Union
 from typing import Iterable
 
-from .regex_strings import PatternType
-from .regex_strings import RePatterns
+from regex_strings import PatternType
+from regex_strings import RePatterns
 
 re_patterns = RePatterns()
 
@@ -214,3 +214,28 @@ def is_email_address(obj: str) -> bool:
             return is_email_address(escape_pattern.sub('a', obj))
 
         return False
+
+
+def is_strong_password(password: str) -> bool:
+    """
+    Check if the password is strong
+    :param password: Password to check
+    :return: Boolean value, True if the password is strong, False otherwise
+    """
+
+    # pattern = re.compile(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$')
+    # return bool(pattern.fullmatch(password))
+
+    pattern = re_patterns.get_pattern(PatternType.PASSWORD)
+    return bool(pattern.fullmatch(password))
+
+
+def is_valid_date_regex(date_str: str) -> bool:
+    """
+    Check if the string represents a valid date in the "YYYY-MM-DD" format using regex
+    :param date_str: String representing a date
+    :return: Boolean value, True if the date is valid, False otherwise
+    """
+
+    date_regex = re_patterns.get_pattern(PatternType.DATE_TIME)
+    return bool(date_regex.match(date_str))

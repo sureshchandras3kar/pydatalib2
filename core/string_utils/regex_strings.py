@@ -3,7 +3,7 @@ from re import Pattern
 from re import compile
 from typing import Dict
 
-from .error_handlings import PatternTypeNotFoundError
+from error_handlings import PatternTypeNotFoundError
 
 
 class PatternType(Enum):
@@ -13,6 +13,8 @@ class PatternType(Enum):
     PHONE_NUMBER = "phone_number"
     URL = "url"
     ESCAPE_CHARACTER = "escape_character"
+    PASSWORD = "password"
+    DATE_TIME = "date_time"
 
 
 class RePatterns:
@@ -22,6 +24,8 @@ class RePatterns:
     PHONE_NUMBER: Pattern[str] = r'^\+?[1-9]\d{1,14}$'
     URL: Pattern[str] = r'^(https?|ftp)://[^\s/$.?#][a-zA-Z0-9_-]*(\.[a-zA-Z0-9_-]+)+(/[^\s]*)?$'
     ESCAPE_SEARCH: Pattern[str] = r'(?!"[^"]*)@+(?=[^"]*")|\\@'
+    PASSWORD_PATTERN: Pattern[str] = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
+    DATE_TIME: Pattern[str] = r'^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$'
 
     def __init__(self):
         self.PATTERN_MAPPING: Dict[PatternType, Pattern] = {
@@ -29,7 +33,9 @@ class RePatterns:
             PatternType.ESCAPE_CHARACTER: compile(self.ESCAPE_SEARCH),
             PatternType.IPV4: compile(self.IPV4),
             PatternType.PHONE_NUMBER: compile(self.PHONE_NUMBER),
-            PatternType.URL: compile(self.URL)
+            PatternType.URL: compile(self.URL),
+            PatternType.PASSWORD: compile(self.PASSWORD_PATTERN),
+            PatternType.DATE_TIME: compile(self.DATE_TIME)
         }
 
     @property
