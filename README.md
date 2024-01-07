@@ -23,7 +23,7 @@ PyDataLib2 is a foundational toolkit of Python utilities igniting innovation and
 ---
 
 ## About
-PyDataLib is a foundational toolkit of dynamic Python utilities innovation and efficiency in development.
+PyDataLib2 is a foundational toolkit of dynamic Python utilities innovation and efficiency in development.
 
 ### Key Features
 - **Flexibility**: A flexible set of utilities adaptable to various development needs.
