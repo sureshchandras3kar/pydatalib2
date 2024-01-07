@@ -10,7 +10,7 @@
 PyDataLib2 is a foundational toolkit of Python utilities igniting innovation and efficiency in development.
 
 <!-- Badges (Optional) -->
-![License](https://img.shields.io/badge/License-MIT-blue.svg)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 <!-- Add more badges if necessary (e.g., Build, Version, etc.) -->
 
 ---
