@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setup(
     name='PyDataLib2',
-    version='0.0.1',
+    version='0.0.3',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
     install_requires=[
