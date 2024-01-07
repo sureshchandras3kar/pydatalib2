@@ -1,5 +1,5 @@
 import unittest
-from core.string_utils.string_validation import is_strong_password, is_valid_date_regex
+from src.PyDataLib2.string_utils.string_validation import is_valid_date_regex
 
 
 class TestValidDateFormat(unittest.TestCase):
