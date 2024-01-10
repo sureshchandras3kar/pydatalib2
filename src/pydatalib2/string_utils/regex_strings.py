@@ -3,7 +3,7 @@ from re import Pattern
 from re import compile
 from typing import Dict
 
-from error_handlings import PatternTypeNotFoundError
+from exceptions import PatternTypeNotFoundError
 
 
 class PatternType(Enum):

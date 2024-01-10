@@ -43,11 +43,11 @@ Start using PyDataLib2  in your Python projects:
 ### String Manipulation
 
 ```python
-from pydatalib.string_utils import string_validation
+from pydatalib2 import string_utils
 
 # Example usage:
 # String manipulation
-result = string_validation.is_string("input_string") # true
+result = string_utils.is_valid_string("input_string") # true
 ```
 
 ---
@@ -55,5 +55,5 @@ result = string_validation.is_string("input_string") # true
 ### Installation
 You can install PyDataLib2  using `pip`:
 ```bash
-pip install PyDataLib 
+pip install pydatalib2
 ```

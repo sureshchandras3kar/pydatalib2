@@ -4,7 +4,7 @@ with open('README.md') as f:
     long_description = f.read()
 
 setup(
-    name='PyDataLib2',
+    name='pydatalib2',
     version='0.0.3',
     packages=find_packages(where='src'),
     package_dir={'': 'src'},
@@ -13,30 +13,35 @@ setup(
     ],
     author='Suresh Chandra Sekar',  # noqa
     maintainer='Nithesh',  # noqa
-    description='PyDataLib2 is a utilities igniting innovation and efficiency in development.',
+    description='pydatalib2 is a utilities igniting innovation and efficiency in development.',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/sureshchandras3kar/PyDataLib2',
-    license='MIT',
+    url='https://github.com/sureshchandras3kar/pydatalib2',
+    license='Apache License 2.0',
     python_requires='>=3.6',
+    tests_require=[
+        'pytest'
+    ],
     keywords=[
         'python',
         'utilities',
         'development',
         'efficiency',
-        'innovation',
         'data processing',
         'text manipulation',
         'file management',
         'data structures'
     ],
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status ::  1 - Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.6',
+        'Intended Audience :: Information Technology',
+        'Intended Audience :: System Administrators',
+        'License :: OSI Approved :: Apache License 2.0',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Topic :: Utilities',
     ],
 )

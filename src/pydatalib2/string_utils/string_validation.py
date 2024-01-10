@@ -222,15 +222,11 @@ def is_strong_password(password: str) -> bool:
     :param password: Password to check
     :return: Boolean value, True if the password is strong, False otherwise
     """
-
-    # pattern = re.compile(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$')
-    # return bool(pattern.fullmatch(password))
-
     pattern = re_patterns.get_pattern(PatternType.PASSWORD)
     return bool(pattern.fullmatch(password))
 
 
-def is_valid_date_regex(date_str: str) -> bool:
+def is_valid_datetime_format(date_str: str) -> bool:
     """
     Check if the string represents a valid date in the "YYYY-MM-DD" format using regex
     :param date_str: String representing a date

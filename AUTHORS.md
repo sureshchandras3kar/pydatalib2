@@ -10,6 +10,7 @@ The "PyDataLib2" project is more than just code; it's a testament to collaborati
 ## 🛠️ **Core Architects**
 
 * **Nithesh** ([GitHub](https://github.com/Nithesh-Wayne)) — Nithesh's eagle eye and insightful reviews guided PyDataLib2 to excellence, ensuring code quality and a user-friendly experience.
+* **Suresh Chandra Sekar** ([GitHub](https://github.com/sureshchandras3kar), [LinkedIn](https://www.linkedin.com/in/suresh-chandrasekar/)) — Founder and Architect of PyDataLib2, Suresh's strategic vision and meticulous coding laid the foundation for this invaluable tool.
 
 > "Nithesh's contributions were instrumental in polishing and refining PyDataLib2. His dedication to user experience is truly commendable." - Suresh Chandra Sekar
 
