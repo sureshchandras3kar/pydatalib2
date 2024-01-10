@@ -1,3 +1,23 @@
 [build-system]
 requires = ['setuptools>=42']
 build-backend = 'setuptools.build_meta'
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
+
+[tool.pdm.dev-dependencies]
+linting = [
+    "ruff==0.1.13",
+    "mypy~=1.1.1"
+]
+
+# configuring ruff
+
+[tool.ruff]
+line-length = 120
+extend-select = ['Q', 'RUF100', 'C90', 'UP', 'I', 'D', 'T', 'SIM', ]
+extend-ignore = ['D105', 'D107', 'D205', 'D415']
+flake8-quotes = {inline-quotes = 'single', multiline-quotes = 'double'}
+target-version = "py38"
