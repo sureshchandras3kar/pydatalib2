@@ -2,9 +2,7 @@ from typing import Any
 
 
 class PatternTypeNotFoundError(Exception):
-    """
-    Exception raised when a pattern type is not found.
-    """
+    """Exception raised when a pattern type is not found."""
 
     def __init__(self, message="Pattern type not found."):
         self.message = message
@@ -15,9 +13,7 @@ class PatternTypeNotFoundError(Exception):
 
 
 class InvalidPatternTypeError(Exception):
-    """
-    Exception raised when a pattern type is invalid
-    """
+    """Exception raised when a pattern type is invalid."""
 
     def __init__(self):
         super().__init__()
@@ -27,18 +23,15 @@ class InvalidPatternTypeError(Exception):
 
 
 class InvalidInputError(TypeError):
-    """
-    Custom error raised when received object is not a string as expected.
-    """
+    """Custom error raised when received object is not a string as expected."""
 
     def __init__(self, input_data: Any) -> None:
-        """
-        Initialize the InvalidInputError instance.
+        """Initialize the InvalidInputError instance.
 
         :param input_data: Any received object
         """
         if input_data is None:
-            msg = 'No input provided'
+            msg = "No input provided"
         else:
             type_name = input_data.__class__.__name__
             msg = f'Expected "str", received "{type_name}"'
